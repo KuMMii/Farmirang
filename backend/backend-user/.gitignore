@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 
 ## secret properties yml
-application-secret.yml
+#application-secret.yml
 
 ### STS ###
 .apt_generated
