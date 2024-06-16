@@ -36,7 +36,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // Kafka
-    implementation 'org.springframework.kafka:spring-kafka'
+//    implementation 'org.springframework.kafka:spring-kafka'
 
     // PostgreSQL
     runtimeOnly 'org.postgresql:postgresql'

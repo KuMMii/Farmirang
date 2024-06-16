@@ -7,8 +7,6 @@ import com.cg.farmirang.chat.global.common.code.ErrorCode;
 import com.cg.farmirang.chat.global.exception.BusinessExceptionHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.admin.NewTopic;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -19,25 +17,41 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ChatMessageServiceImpl implements ChatMessageService{
 
-    private final KafkaTemplate<String, ChatMessage> kafkaTemplate;
-    private final NewTopic topic;
+//    private final KafkaTemplate<String, ChatMessage> kafkaTemplate;
+//    private final NewTopic topic;
     private final ChatMessageRepository chatMessageRepository;
+
+    // 아직 서버 없어서 만든 버전
+
+    @Override
+    public ChatMessage sendMessage(ChatMessageRequestDto request) {
+        try {
+            ChatMessage chatMessage = ChatMessage.toEntity(request);
+            chatMessageRepository.save(chatMessage);
+            System.out.println(chatMessage.getMessage());
+            return chatMessage;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new BusinessExceptionHandler(ErrorCode.KAFKA_ERROR);
+        }
+    }
+
 
     /**
      * 메시지 보내기
      *
      * @param request
      */
-    @Override
-    public void sendMessage(ChatMessageRequestDto request) {
-        try {
-            ChatMessage chatMessage = ChatMessage.toEntity(request);
-            kafkaTemplate.send(topic.name(), chatMessage);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new BusinessExceptionHandler(ErrorCode.KAFKA_ERROR);
-        }
-    }
+//    @Override
+//    public void sendMessage(ChatMessageRequestDto request) {
+//        try {
+//            ChatMessage chatMessage = ChatMessage.toEntity(request);
+//            kafkaTemplate.send(topic.name(), chatMessage);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new BusinessExceptionHandler(ErrorCode.KAFKA_ERROR);
+//        }
+//    }
 
     /**
      * 저장된 메시지 가져오기

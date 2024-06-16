@@ -25,8 +25,8 @@
                     <label for="memberId">
                         Friend Member ID:</label>
                     <input type="number" id="memberId" name="memberId" class="form-control" required>
-                    <label for="accessToken">Access Token:</label>
-                    <input type="text" id="accessToken" name="accessToken" class="form-control" required>
+                    <label for="myMemberId">My MemberId:</label>
+                    <input type="number" id="myMemberId" name="myMemberId" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -41,8 +41,8 @@
 </div>
 <h2>채팅방 리스트 조회</h2>
 <form th:action="@{/chats/rooms/lists}" method="get">
-    <div>Access Token:</div>
-    <input type="text"  name="accessToken" class="form-control" required>
+    <div>MemberId:</div>
+    <input type="number"  name="memberId" class="form-control" required>
     <button type="submit">리스트 조회</button>
 </form>
 
@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
                 <label for="senderId">Sender ID:</label>
-                <input type="number" id="senderId" class="form-control" required>
+                <input type="number" id="senderId" name="memberId" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="senderNickname">Sender Nickname:</label>

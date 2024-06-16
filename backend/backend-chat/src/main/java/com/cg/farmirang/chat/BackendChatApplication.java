@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@EnableFeignClients
+//@EnableFeignClients
 //@ComponentScan(basePackages = {"com.cg.farmirang.chat.feature"})
 public class BackendChatApplication {
 

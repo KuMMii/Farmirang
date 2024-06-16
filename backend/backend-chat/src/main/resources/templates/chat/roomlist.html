@@ -12,8 +12,8 @@
 
 <div th:each="room : ${response.chatRoomDtoList}">
     <form th:action="@{/chats/rooms/{chatRoomId}(chatRoomId=${room.chatRoomId})}" method="get">
-        <label for="accessToken">Access Token:</label>
-        <input type="text" id="accessToken" name="accessToken" class="form-control" required>
+        <label for="memberId">Member Id:</label>
+        <input type="number" id="memberId" name="memberId" class="form-control" required>
         <div th:text="${room.chatRoomId}">ChatRoomId</div>
         <div th:text="${room.nickname}">nickname</div>
         <div th:text="${room.lastMessage}">Latest message</div>

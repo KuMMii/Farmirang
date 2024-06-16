@@ -59,7 +59,7 @@
                 senderNickname: senderNickname,
                 message: message,
             };
-            stompClient.send('/app/message/'+roomId, {}, JSON.stringify(chatMessage));
+            stompClient.send('/app/message', {}, JSON.stringify(chatMessage));
             document.getElementById('chatInput').value = '';
         }
     });

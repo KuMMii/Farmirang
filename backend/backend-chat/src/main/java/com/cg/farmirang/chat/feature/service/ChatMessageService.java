@@ -6,7 +6,8 @@ import com.cg.farmirang.chat.feature.entity.ChatMessage;
 import java.util.List;
 
 public interface ChatMessageService {
-    void sendMessage(ChatMessageRequestDto request);
+    //    void sendMessage(ChatMessageRequestDto request);
+    ChatMessage sendMessage(ChatMessageRequestDto request);
 
     List<ChatMessage> getMessages(String chatRoomId);
 

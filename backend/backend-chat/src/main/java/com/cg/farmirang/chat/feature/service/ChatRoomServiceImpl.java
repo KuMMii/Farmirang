@@ -14,7 +14,6 @@ import com.cg.farmirang.chat.global.common.repository.MemberRepository;
 import com.cg.farmirang.chat.global.exception.BusinessExceptionHandler;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
